@@ -1,14 +1,14 @@
 const links = [{
         label: "Week1 Notes",
-        url: "/week1.html"
+        url: "WDD330/week1.html"
     },
     {
         label: "Week2 Notes",
-        url: "/week2.html"
+        url: "WDD330/week2.html"
     },
     {
         label: "Week3 Notes",
-        url: "/week3.html"
+        url: "WDD330/week3.html"
     }
 ];
 
