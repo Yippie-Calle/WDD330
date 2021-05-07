@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WDD 330 - Week2 Notes</title>
+    <!-- <link href="" type="text/css" rel="stylesheet" media="screen"> -->
+    <meta name="veiwport" content="width=device-width, initial-scale=1.0">
+</head>
+<script src="main.js"></script>
+
+<body onload="addToIndex()">
+    <header>
+        <h1>Week 02</h1>
+    </header>
+    <p>
+        Object Methods, “This”<br>
+        •	When we write our code using objects to represent entities, that’s called object-oriented programming<br>
+        o	So, with this knowledge. JavaScript is an Object-Oriented Programming language that works best with HTML and CSS? Can JavaScript live alone without Web Development Language?<br>
+        •	In JavaScript, keyword this behaves unlike most other programming languages. It can be used in any function, even if it’s not a method of an object.<br>
+        •	If you come from another programming language, then you are probably used to the idea of a "bound this", where methods defined in an object always have this referencing that object.<br>
+        •	Arrow functions are special: they don’t have their “own” this. If we reference this from such a function, it’s taken from the outer “normal” function.<br>
+        This in JavaScript<br>
+        •	this is a keyword whose value changes depending on how a function gets called.<br>
+        o	this in global context<br>
+        	When this is called outside of any function, in a global context, this defaults to the Window object in the browser.<br>
+        o	this in object construction<br>
+        	When you create a new instance of an object with the new keyword, this refers to the instance.<br>
+        o	this in an object method<br><br>
+        	Methods are fancy words for functions that are associated with an object<br>
+        o	this in a simple function<br>
+        	Anonymous functions written in the same form are also considered simple functions.<br>
+        o	this in an arrow function<br>
+        	this in an arrow function is always the same as this around it (in its immediate scope)<br>
+        o	this in an event listener<br><br><br>
+        o	Does other Object Oriented Languages also have this style and this many of this(s)? <br>
+        •	bind is a method that is present in every function. It allows you to change the this context.<br>
+        •	bind doesn’t work with arrow functions.<br>
+        CHAPT 5 Objects<br>
+        •	An object in JavaScript is a self-contained set of related values and functions.<br>
+        •	If a property’s value is a function, it is known as amethod.<br>
+        •	JavaScript objects are similar to a hash or associative array in other programming languages (or even a JavaScript map ).<br>
+        o	JavaScript Map?<br>
+        •	Objects are often used to keep any related information and functionality together in the same place.<br>
+        •	An object literal is an object that is created directly in the language by wrapping all its properties and methods in curly braces {}<br>
+        o	So object literal is like a combination of class and a variable? Is it like forming an Array?<br>
+        •	All objects are mutable at any time when a program is running. This means that its properties and methods can be changed or removed, and new properties and methods can be added to the object, even if it was declared using const .<br>
+        •	You can access the properties of an object using the dot notation that we’ve already seen in previous chapters.<br>
+        •	You can also access an object’s properties using bracket notation<br>
+        •	Dot notation is much more common, but bracket notation has a few advantages: it's the only way to access nonstandard property and method names that don’t follow the variable naming rules.<br>
+        •	The ability to create objects with computed property keys was introduced in ES6.<br>
+        o	When did ES6 come out?<br>
+        •	To call an object’s method we can also use dot or bracket notation. Calling a method is the same as invoking a function, so parentheses need to be placed after the method name
+        •	The in operator can be used to check whether an object has a particular property.<br>
+        •	Another way is to use the hasOwnProperty() method. As mentioned earlier, objects can inherit properties from other objects, so all objects have a method called hasOwnProperty()<br>
+        •	New properties and methods can be added to objects at any time in a program. This is done by simply assigning a value to the new property.<br>
+        •	It's important to note that properties don’t always appear in the order they were entered. An object is not an ordered list like an array, set or map, so you should never rely on the properties being in a certain order.<br>
+        •	Any property can be removed from an object using the delete operator.<br>
+        •	It’s even possible for an object to contain other objects. These are known as nested objects<br>
+        •	The values in nested objects can be accessed by referencing each property name in order using either dot or bracket notation<br>
+        •	objects are assigned byreference. This means that if a variable is assigned to an object that already exists, it will simply point to the exact same space in memory.<br>
+    </p>
+</body>
+<footer>
+</footer>
