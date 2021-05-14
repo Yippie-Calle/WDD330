@@ -4,12 +4,21 @@
 <head>
     <meta charset='utf-8'>
     <title>Hero Form</title>
+    <style>
+        .error {
+            background: #f99;
+            border: #900 1px solid;
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <form id='hero'>
         <label for='heroName'>Name:
-            <input type='text' id='heroName' name='heroName' autofocus placeholder='Your Super Hero Name' maxlength=32>
+            <input type='text' id='heroName' name='heroName' autofocus placeholder='Your Super Hero Name' maxlength=32
+                required>
+            <!--Required makes this a feild a must-->
         </label>
         <label for='realName'>Real Name:
             <input type='password' name='realName' id='realName'></label> <!-- This is like passwords-->
@@ -44,6 +53,24 @@
             <!-- This is an integer field-->
         </label><label for='age'>Age:
             <input type='number' id='age' name='age' min=0 step=1></label>
+        <!-- Where does our hero live?-->
+        <label for='City'>Base of Operations:
+            <select name='city' id='city'>
+                <option value='' selected>Choose a City</option>
+                <option value='Metropolis'>Metropolis</option>
+                <option value='Gotham City'>Gotham City</option>
+                <option value='Keystone City'>Keystone City</option>
+                <option value='Coast City'>Coast City</option>
+                <option value='Star City'>Star City</option>
+            </select>
+        </label>
+        <!-- Here they write their origin story-->
+        <label for='origin'>Origin Story:
+            <textarea id='origin' name='origin' rows='20' cols='60'></textarea>
+        </label>
+        <!-- Just in case they messed up-->
+        <button type='reset'>Reset</button>
+        <!--Submit Your Super Hero-->
         <button type='submit'>Submit</button>
         <!-- This is for text input fields -->
         <label for='donation-amount'>Enter amount to donate:

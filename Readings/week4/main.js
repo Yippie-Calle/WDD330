@@ -19,3 +19,35 @@ for (let i=0; i < form.powers.length; i++) {
 // hero.powers = [...form.powers].filter(box => box.checked).map(box => box.value); <--- this will produce the same result as the one above. 
 hero.category = form.category.value; // this checks what was chosen in the Radio Category
 hero.age = form.age.value; // This grabs age of hero. 
+hero.city = form.city.value; // Selects from Drop down
+hero.origin = form.origin.value;// Origin Story
+form.addEventListener('submit',validate,false); // Validator making an appropriate name to be written
+function validate(event) {
+    const firstLetter = form.heroName.value[0];
+    if (firstLetter.toUpperCase() === 'X') {
+        event.preventDefault();
+        alert('Your name is not allowed to start with X!');
+    }
+}
+//This provides instant feed back. Even before the user clicks submit. 
+const label = form.querySelector('label');
+const error = document.createElement('div');
+error.classList.add('error');
+error.textContent = '! Your name is not allowed to start with X.';
+label.append(error);
+function validateInline() {
+    const heroName = this.value.toUpperCase();
+    if(heroName.startsWith('X')){
+    error.style.display = 'block';
+    } else {
+    error.style.display = 'none';
+    }
+}
+//The following function will disable the button if an input field is empty:
+function disableSubmit(event) {
+    if(event.target.value === ''){
+        document.getElementById('submit').disabled = true;
+    } else {
+        document.getElementById('submit').disabled = false;
+    }
+}
