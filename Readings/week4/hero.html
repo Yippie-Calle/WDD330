@@ -1,20 +1,57 @@
 <!doctype html>
 <html lang='en'>
+
 <head>
     <meta charset='utf-8'>
     <title>Hero Form</title>
 </head>
+
 <body>
     <form id='hero'>
         <label for='heroName'>Name:
             <input type='text' id='heroName' name='heroName' autofocus placeholder='Your Super Hero Name' maxlength=32>
         </label>
+        <label for='realName'>Real Name:
+            <input type='password' name='realName' id='realName'></label> <!-- This is like passwords-->
+        <p>Super Powers:</p>
+        <!--Check box inputs-->
+        <label for='flight'>Flight:
+            <input type='checkbox' id='flight' value='Flight' name='powers'>
+        </label>
+        <label for='strength'>Super Strength:
+            <input type='checkbox' id='strength' value='Strength' name='powers'>
+        </label>
+        <label for='speed'>Super Speed:
+            <input type='checkbox' id='speed' value='Super Speed' name='powers'>
+        </label>
+        <label for='energy'>Energy Blasts:
+            <input type='checkbox' id='energy' value='Energy Blasts' name='powers'>
+        </label>
+        <label for='telekinesis'>Telekinesis:
+            <input type='checkbox' id='telekinesis' value='Telekinesis' name='powers'>
+        </label>
+
+        <p>What type of hero are you?</p>
+        <!-- This wil create a multiple choice option. Only one is the correct answer. -->
+        <label for='hero'>Hero:
+            <input type='radio' name='category' value='Hero' id='hero'>
+        </label>
+        <label for='villain'>Villain:
+            <input type='radio' name='category' value='Villain' id='villain'>
+        </label>
+        <label for='anti-hero'>Anti-Hero:
+            <input type='radio' name='category' value='Antihero' id='anti-hero'>
+            <!-- This is an integer field-->
+        </label><label for='age'>Age:
+            <input type='number' id='age' name='age' min=0 step=1></label>
         <button type='submit'>Submit</button>
         <!-- This is for text input fields -->
-        <label for='donation-amount'>Enter amount to donate: 
-            <input type='text' id ='donation-amount' name='donationAmount' value='10'>
+        <label for='donation-amount'>Enter amount to donate:
+            <input type='text' id='donation-amount' name='donationAmount' value='10'>
+            <!--this presets the amount-->
         </label>
     </form>
-<script src='/WDD330/Readings/week4/main.js'></script>
+    <script src='/WDD330/Readings/week4/main.js'></script>
 </body>
+
 </html>
