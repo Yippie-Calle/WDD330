@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WDD 330 - Week5 Notes</title>
+    <!-- <link href="" type="text/css" rel="stylesheet" media="screen"> -->
+    <meta name="veiwport" content="width=device-width, initial-scale=1.0">
+</head>
+<script>
+
+</script>
+<body>
+<a href="#">Check out Code I followed.</a>
+<p>
+    What causes errors? <br>
+    * System errors<br>
+    * Programmer error<br>
+    * User Error<br>
+    Programmer errors are our responsibility, so we must ensure they are minimized as much as possible and fixed promptly. We also should try to limit user errors by predicting any possible interactions that may throw an error, and ensure they are dealt with in a way that doesn’t negatively affect the user experience<br>
+    Stack Traces-  a sequence of functions or method calls that lead to the point where the error occurred. <br>
+    Warnings -  it can be problematic, since the issue that produced the warning may cause the program to continue running incorrectly. <br>
+    JavaScript is a fairly forgiving language when it comes to errors; it didn’t implement exceptions at all until ECMAScript version 3 <br>
+    In production, a ninja programmer should try to make the code fail gracefully (although not completely silently ― we still need to know there’s an error), so the user experience is not affected, if possible.<br>
+    --- Im assuming that this statement means that when we code, we first do the try, catch with everything to make sure code we write runs and if it doesnt we will be notified. <br>
+    ECMAScript 5 introduced a strict mode that produces more exceptions and warnings and prohibits the use of some deprecated features <br>
+    Strict mode encourages a better quality of JavaScript to be written that befits a ninja programmer, so its use is recommended. <br>
+    ---- If this encourages better writing of code and better practice. Why aren't we taught this in JavaScript first lessons? <br>
+    You can even use strict mode on a per-function basis by adding the line inside a function. Strict mode will then only be applied to anything inside that function <br>
+    --- So is it user preference if they want to be done in function or top of the code correct?<br>
+    Linting tools such asJS Lint,JS Hint,andES Lintcan be used to test the quality of JavaScript code, beyond simply using strict mode.<br>
+    They are designed to highlight any sloppy programming practices or syntax errors, and will complain if certain style conventions are not followed, such as how code is indented.<br>
+    Passing a lint test is no guarantee that your code is correct, but it will mean it will be more consistent and less likely to have problems.<br>
+    ---So how different is Strict mode and linting tools from lets say extensions or default corrections on Visual Studio Code? <br>
+    --- Should we download Modernizer or Can I use? <br>
+    ---Which Browser has the best debugger? Firefox Developer (is what I use for web design), Chrome, Edge, Safari? <br>
+    --- Console in the browser would be similar to just using the console in VS code?
+    --- Would we just use the debug tool in the IDE? or is typing debugger better? 
+    Error Objects 
+    Error -  
+    EvalError is not used in the current ECMAScript specification and only retained for backwards compatibility. It was used to identify errors when using the global eval() function <br>
+    RangeError is thrown when a number is outside an allowable range of values.<br>
+    ReferenceError is thrown when a reference is made to an item that doesn’t exist. For example, calling a function that hasn't been defined.<br>
+    SyntaxError is thrown when there’s an error in the code’s syntax.<br>
+
+</p>
+</body>
+<footer>
+
+</footer>
