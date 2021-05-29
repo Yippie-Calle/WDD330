@@ -1,0 +1,98 @@
+*{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+html {
+    border: 1px solid black;
+}
+
+.container {
+    min-height: 100vh;
+}
+
+#title {
+    text-align: center;
+}
+
+#what {
+    margin: 0;
+    border-radius: 0;
+    padding: 5.5px;
+    float: left;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+#add {
+    padding: 5px;
+    width: 12%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+}
+
+/* .liststyle {
+    cursor: pointer;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+} */
+
+#add:hover {
+    background-color: #bbb;
+}
+#todolist{
+    flex: 1;
+}
+.list {
+    margin-top: 25px;
+}
+.todo{
+    min-width: 30%;
+    list-style: none;
+}
+.listItem{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5 ease;
+}
+
+.delete{
+    width: auto;
+    padding: .5rem;
+    cursor: pointer;
+    background-color: white;
+    color: red;
+}
+.delete:hover{
+    background-color: red;
+    color: white;
+}
+.completed{
+    width: auto;
+    padding: .5rem;
+    cursor: pointer;
+    background-color: white;
+    color: green;
+}
+.completed:hover{
+    background-color: green;
+    color: white;
+}
+.complete{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+/* .fall{
+    transform: translate(8rem) rotateZ(20deg)
+} */
