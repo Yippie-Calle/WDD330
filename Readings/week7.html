@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WDD 330 - Week7 Notes</title>
+    <!-- <link href="" type="text/css" rel="stylesheet" media="screen"> -->
+    <meta name="veiwport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <ul>Introduction to fetch()
+        <li>Fetch API uses Promises, which enables a simpler and cleaner API. </li>
+        <li>An XMLHttpRequest would need two listeners to be set to handle the success and error cases and a call to open() and send()</li>
+        <li>The response of a fetch() request is a Stream object, which means that when we call the json() method, a Promise is returned since the reading of the stream will happen asynchronously.</li>
+        <li>When we make a fetch request, the response will be given a response.type of "basic", "cors" or "opaque". </li>
+        <li>Basic -resource on same origin. No restrictions</li>
+        <li>cors response restricts the headers you can view to 'cache-control', 'content-language', 'content-type', 'expires', last modified, and pragma</li>
+        <li>paque response wont be able to read the data returned or view the status of the request, meaning we cant check if the request was successfull or not</li>
+        <li>same-origin only succeeds for requests for assets on the same origin, all other requests will reject.</li>
+        <li>cors will allow requests for assets on the same-origin and other origins which return the appropriate CORs headers.</li>
+        <li>cors-with-forced-preflight will always perform a preflight check before making the actual request.</li>
+        <li>no-cors is intended to make requests to other origins that do not have CORS headers and result in an opaque response, but as stated, this isn't possible in the window global scope at the moment.</li>
+        <li> the great features of promises is the ability to chain them together. For fetch, this allows you to share logic across fetch requests.</li>
+        <li>The great thing with this is that you can share the logic across all of your fetch requests, making code easier to maintain, read and test.</li>
+    </ul>
+    <h2>Chapter 11 Further Functions</h2>
+    <ul>Function Properties and methods
+        <li>functions are first-class objects means they can have properties and methods themselves</li>
+        <li>all functions have a length property that returns the number of parameters the function has</li>
+    </ul>
+    <ul>Call and Apply Methods
+        <li>The call() method can be used to set the value of this inside a function to an object that is provided as the first argument.</li>
+        <li>If the function that’s called requires any parameters, these need to be provided as arguments after the first argument, which is always the value of this </li>
+        <li>If a function doesn’t refer to an object as this in its body, it can still be called using the call() method, but you need provide null as its first argument.</li>
+        <li>The apply() method works in the same way, except the arguments of the function are provided as an array, even if there is only one argument. 
+        </li>
+        <li>These are two powerful methods, as they allow generalized functions to be written that are not tied to specific objects by being methods of that object</li>
+    </ul>
+    <ul>Custom Properties
+        <li>There is nothing to stop you adding your own properties to functions in the same way that you can add properties to any object in JavaScript</li>
+    </ul>
+    <ul>Memoization
+        <li>memorization = result caching</li>
+        <li>If a function takes some time to compute a return value, we can save the result in a cache property.</li>
+        <li>Then if the same argument is used again later, we can return the value from the cache, rather than having to compute the result again.</li>
+    </ul>
+    <ul>Immediately Invoked Function Expressions
+        <li>Immediately Invoked Function Expression– or IIFE – (pronounced 'iffy') is an anonymous function that, as the name suggests, is invoked as soon as it’s defined</li>
+        <li>IIFEs are a useful way of performing a task while keeping any variables wrapped up within the scope of the function</li>
+    </ul>
+    <ul>Temporary Variables
+        <li>There is no way to remove a variable from a scope once it’s been declared. </li>
+        <li> Placing any code that uses the temporary variable inside an IIFE will ensure it’s only available while the IIFE is invoked, then it will disappear</li>
+    </ul>
+    <h2>Chapter 13 AJAX</h2>
+    <ul>Clients and Servers
+        <li>The web computers kown as the internet can be seperated into two parts: clients and servers.</li>
+        <li>A client, such as a web browser, will request a resource(usually a web page) from a server, which process the request and sends back a response to the client.</li>
+        <li>JavaScript was originally designed as a client-side scripting</li>
+        <li>Ajax allows Java Script to request resources from a server on behalf of the client. The resources requested are ususally JSON data or small fragments of text or HTML rather than a whole webpage.
+        </li>
+        <li>A server is required when requesting resources using Ajax.</li>
+        <li>Cross-Origin resource sharing(CORS) is a solution to this problem as it allows resources to be requested from another website outside the original origin</li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>A Brief History of Ajax
+        <li>When the World wide web started, web pages contained static content</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>The Fetch API
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>Basic Usage
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
