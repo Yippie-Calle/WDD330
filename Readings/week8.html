@@ -1,65 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Transforms and Transitions</h1>
-        <ul>Transforms
-            <li>transform property lets you lets you translate, rotate, scale, and/or skew any element on the page.</li>
-            <li>We can manipulate an element’s appearance usingtransform functions. </li>
-            <li> The value of the transform property is one or more transform functions (separated by spaces) that will be applied in the order they’re provided</li>
-        </ul>
-        <ul>Translation
-            <li>Translation functions allow you to move elements left, right, up, or down. </li>
-            <li>similar to the behavior of position: relative; when declaring top and left , moving elements up and down or left and right along the x and y axes</li>
-            <li>Unlike position: relative , which allows you to position an element either against its current position or against a parent or other ancestor, a translated element can only be moved relative to its current position.</li>
-            <li>The translate(x,y) function moves an element x from the left, and y from the top</li>
-        </ul>
-        <ul>Scaling
-            <li>The scale(x,y) function scales an element by the defined factors horizontally then vertically. </li>
-            <li>If only one value is provided, it will be used for both the x and y values, growing or shrinking your element or pseudo-element while maintaining the original aspect ratio.</li>
-            <li>As with translate , you can also use the scaleX(x) or scaleY(y) functions. These functions will scale only the horizontal dimensions or only the vertical dimensions respectively.</li>
-            <li>Note that you shouldn’t declare a new transform : because of the cascade, a second transform would override the first. To declare multiple transformations, provide a space-separated list of transform functions. We simply add our scale to the end of that space-separated list.</li>
-            <li>Transforming does not cause a reflow.</li>
-            <li>It’s also worth remembering that scaling, like translation, has no impact on the document flow.</li>
-        </ul>
-        <ul>Rotation
-            <li>The rotate() function rotates an element around the point of origin by a specified angle value.</li>
-            <li>by default the point of origin is the element’s center.</li>
-        </ul>
-        <ul>Skew
-            <li>The skew(x,y) function specifies a skew along the x and y axes. </li>
-            <li>As with translate and scale , there are axis-specific versions of the skew transform: skewX() and skewY() .</li>
-        </ul>
-        <ul>Changing the Origin of the Transform
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    <h1>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <ul>
-            <li></li>
-            <li></li>
+    <ul>Transforms
+        <li>transform property lets you lets you translate, rotate, scale, and/or skew any element on the page.</li>
+        <li>We can manipulate an element’s appearance usingtransform functions. </li>
+        <li> The value of the transform property is one or more transform functions (separated by spaces) that will be
+            applied in the order they’re provided</li>
+    </ul>
+    <ul>Translation
+        <li>Translation functions allow you to move elements left, right, up, or down. </li>
+        <li>similar to the behavior of position: relative; when declaring top and left , moving elements up and down or
+            left and right along the x and y axes</li>
+        <li>Unlike position: relative , which allows you to position an element either against its current position or
+            against a parent or other ancestor, a translated element can only be moved relative to its current position.
+        </li>
+        <li>The translate(x,y) function moves an element x from the left, and y from the top</li>
+    </ul>
+    <ul>Scaling
+        <li>The scale(x,y) function scales an element by the defined factors horizontally then vertically. </li>
+        <li>If only one value is provided, it will be used for both the x and y values, growing or shrinking your
+            element or pseudo-element while maintaining the original aspect ratio.</li>
+        <li>As with translate , you can also use the scaleX(x) or scaleY(y) functions. These functions will scale only
+            the horizontal dimensions or only the vertical dimensions respectively.</li>
+        <li>Note that you shouldn’t declare a new transform : because of the cascade, a second transform would override
+            the first. To declare multiple transformations, provide a space-separated list of transform functions. We
+            simply add our scale to the end of that space-separated list.</li>
+        <li>Transforming does not cause a reflow.</li>
+        <li>It’s also worth remembering that scaling, like translation, has no impact on the document flow.</li>
+    </ul>
+    <ul>Rotation
+        <li>The rotate() function rotates an element around the point of origin by a specified angle value.</li>
+        <li>by default the point of origin is the element’s center.</li>
+    </ul>
+    <ul>Skew
+        <li>The skew(x,y) function specifies a skew along the x and y axes. </li>
+        <li>As with translate and scale , there are axis-specific versions of the skew transform: skewX() and skewY() .
+        </li>
+    </ul>
+    <ul>Changing the Origin of the Transform
+        <li>you can control the origin from which your transforms are applied</li>
+        <li>transform-origin property has the same syntax as the background-position property, and defaults to the
+            center of the object (so that scales and rotations will be around the center of the box by default)</li>
+        <li>the default transform-origin is the center of the circle, applying a rotate() transform to a circle would
+            have no visible effect—a circle rotated 90 degrees still looks exactly the same as it did before being
+            rotated</li>
+    </ul>
+    <ul>Note: Choose Your Ordering Carefully
+        <li>The order of transform functions does matter: if you rotate before translating, your translate direction
+            will be on the rotated axis. </li>
+    </ul>
+
+    <ul>Transitions
+        <li>Animation has certainly been possible for some time with JavaScript, but native CSS transitions generally
+            require less client-side processing, so they’ll usually appear smoother</li>
+        <li>Transitions allow the values of CSS properties to change over time, essentially providing simple animations
+        </li>
+        <li>with the CSS transition property the color transition can be gradual.</li>
+        <li>CSS transitions are declared along with the regular styles on an element.</li>
+        <ol>Here are the steps to create a simple transition using only CSS:
+        </ol>
+        <li>Declare the original state of the element in the default style declaration.</li>
+        <li>Declare the final state of your transitioned element; for example, a :hover state.</li>
+        <li>Include the transition functions in your default style declaration using the transition properties,
+            including: transition-property , transition-duration , transition-timing-function , and transition-delay .
+            We’ll look at each of these and how they work shortly.</li>
+        </ol>
+        <li>The transition-property property defines the CSS properties of the element that should be transitioned, with
+            all for all properties being the default.</li>
+        <li>Any property changing from one value to another for which you can find a valid midpoint can be transitioned.</li>
+        <li>The exception to this “if there is a valid midpoint, it can be transitioned” rule is visibility: although there is no valid midpoint between the values visible and hidden , when transitioned, the value changes at the endpoint of the transition. </li>
+    </ul>
+    <h1>Canvas, SVG, and Drag and Drop
+        <ul>Canvas
+            <li>With HTML5’s Canvas API, we can draw anything we can imagine, all through JavaScript. </li>
+            <li> we can draw shapes and lines, arcs and text, gradients and patterns. In addition, canvas gives us the power to manipulate pixels in images and even video.</li>
             <li></li>
             <li></li>
             <li></li>
@@ -93,6 +116,7 @@
             <li></li>
         </ul>
     </h1>
-    
+
 </body>
+
 </html>
