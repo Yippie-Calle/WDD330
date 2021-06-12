@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .myCanvas {
+        border: dotted 2px black;
+    }
+</style>
 
 <body>
     <h1>Transforms and Transitions</h1>
@@ -76,47 +81,37 @@
         </ol>
         <li>The transition-property property defines the CSS properties of the element that should be transitioned, with
             all for all properties being the default.</li>
-        <li>Any property changing from one value to another for which you can find a valid midpoint can be transitioned.</li>
-        <li>The exception to this “if there is a valid midpoint, it can be transitioned” rule is visibility: although there is no valid midpoint between the values visible and hidden , when transitioned, the value changes at the endpoint of the transition. </li>
+        <li>Any property changing from one value to another for which you can find a valid midpoint can be transitioned.
+        </li>
+        <li>The exception to this “if there is a valid midpoint, it can be transitioned” rule is visibility: although
+            there is no valid midpoint between the values visible and hidden , when transitioned, the value changes at
+            the endpoint of the transition. </li>
     </ul>
-    <h1>Canvas, SVG, and Drag and Drop
-        <ul>Canvas
-            <li>With HTML5’s Canvas API, we can draw anything we can imagine, all through JavaScript. </li>
-            <li> we can draw shapes and lines, arcs and text, gradients and patterns. In addition, canvas gives us the power to manipulate pixels in images and even video.</li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </h1>
-
+    <h1>Canvas, SVG, and Drag and Drop</h1>
+    <ul>Canvas
+        <li>With HTML5’s Canvas API, we can draw anything we can imagine, all through JavaScript. </li>
+        <li> we can draw shapes and lines, arcs and text, gradients and patterns. In addition, canvas gives us the power
+            to manipulate pixels in images and even video.</li>
+    </ul>
+    <ul>A Bit of Canvas History
+        <li>Canvas was first developed by Apple</li>
+        <li>If you aspire to do development for the iPhone or iPad (referred to jointly as iOS), or for the Mac, what
+            you learn in canvas should help you understand some of the basic concepts of Quartz 2D.</li>
+    </ul>
+    <ul>Creating a canvas Element
+        <li>
+            <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+                Sorry! Your browser doesn’t support Canvas.
+            </canvas>
+        </li>
 </body>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("2d");
+    context.strokeStyle = "red";
+    context.fillStyle = "rgba(0, 0, 255, 0.5)";
+    context.fillRect(10, 10, 100, 100);
+    context.strokeRect(10, 10, 100, 100);
+</script>
 
 </html>

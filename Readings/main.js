@@ -26,6 +26,11 @@ const links = [{
         label: "Week7 Notes",
         url: "Readings/week7.html"
     }
+    ,
+    {
+        label: "Week8 Notes",
+        url: "Readings/week8.html"
+    }
 ];
 
 function addToIndex() {
