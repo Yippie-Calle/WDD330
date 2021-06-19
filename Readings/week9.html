@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9 Readings</title>
+</head>
+
+<body>
+    <h1>Chapter 9 - The window Object</h1>
+
+    <ul>
+        <h2>The Browser Model </h2>
+        <li>The Browser Object Model (or BOM for short) is a collection of properties and methods that contain
+            information about the browser and computer screen.</li>
+        <li>There is no official standard for the BOM, although there are a number of properties and methods that are
+            supported by all the major browsers, making a sort of de facto standard</li>
+        <li>Remember that JavaScript can be run in different environments. The BOM only makes sense in a browser
+            environment. This means that other environments (such as Node.js) probably won’t have a window object,
+            although they will still have a global object; for example, Node.js has an object called global .</li>
+    </ul>
+    <ul>
+        <h2>Going Global</h2>
+        <li>global variables. These are variables that are created without using the const , let or var keywords. Global
+            variables can be accessed in all parts of the program</li>
+        <li>In general, you should refer to global variables without using the window object; it’s less typing and your
+            code will be more portable between environments.</li>
+        <li>ES6 made parseInt() and isNaN() methods of the Number object,</li>
+    </ul>
+    <ul>
+        <h2>Dialogs</h2>
+        <li>three functions that produced dialogs in the browsers: alert() , confirm() and prompt() .</li>
+        <li>the window.alert() method will pause the execution of the program and display a message in a dialog box.
+        </li>
+        <li>he window.confirm() method will stop the execution of the program and display a confirmation dialog that
+            shows the message provided as an argument, and giving the options of OK or Cancel.</li>
+        <li>The window.prompt() method will stop the execution of the program</li>
+    </ul>
+</body>
+<h1>Chapter 14 - HTML5 API </h1>
+
+<ul>
+    <h2>HTML5 </h2>
+    <li>HTML5 was for HTML what ES6 was for JavaScript – it added a large number of new features to the specification.
+        It also went beyond the actual markup language and brought together a number of related technologies such as CSS
+        and JavaScript. </li>
+    <li>The HTML5 specification is separated into modules that allow different features to be developed at different
+        paces then implemented without having to wait for other features to be completed. It also means that when a
+        previously unforeseen development occurs, a new module can be created to cater for it. Modules can be at
+        different stages of maturity, from ideas to full implementation.</li>
+</ul>
+<ul>
+    <h2>The data- Attribute</h2>
+    <li>The data- attribute is a way of embedding data in a web page using custom attributes that are ignored by the
+        browser. They’re also private to a page, so are not intended to be used by an external service – their sole
+        purpose is to be used by a JavaScript program.</li>
+    <li>the information contained in the attributes can be used to identify particular elements.</li>
+    <li>The support for the data- attribute is generally very good in modern browsers. Even Internet Explorer 8 has
+        partial support! Some older browsers are unable to understand the dataset property, however, but any data-
+        attribute can be found using the standard getAttribute method. </li>
+</ul>
+<ul>
+    <h2>HTML5 APIss</h2>
+    <li>The HTML5 specification contains a number of APIs that help to gain access to hardware, such as cameras,
+        batteries, geolocation, and the graphics card. </li>
+</ul>
+<ul>
+    <h2>HTML5 Web Storage</h2>
+    <li>The Web Storage API provides a key-value store on the client’s computer that is similar to using cookies but has
+        fewer restrictions, more storage capacity, and is generally easier to use. </li>
+    <li>The Web Storage API has some crucial differences with cookies:
+
+        Information stored isnotshared with the server on every request.
+
+        Information is available in multiple windows of the browser (but only if the domain is the same).
+
+        Storage capacity limit is much larger than the 4KB limit for cookies ( There is no actual limit in the
+        specification, but most browsers have a limit set at 5GB per domain.).
+
+        Any data stored does not automatically expire as it does with cookies. This potentially makes cookies a better
+        choice for something like showing a popup once a day.</li>
+</ul>
+<img src="modernWorkflow.JPG" alt="Modern Work flow screen shot">
+</body>
+
+</html>
