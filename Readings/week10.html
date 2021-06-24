@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 10 Assigned Readings</title>
+  </head>
+  <style>
+    input:invalid {
+      border: 2px dashed red;
+    }
+
+    input:invalid:required {
+      background-image: linear-gradient(to right, pink, lightgreen);
+    }
+    input:valid {
+      border: 2px solid black;
+    }
+  </style>
+  <body>
+    <h1>MDN: Validating Forms</h1>
+    <ul>
+      Client side form validation
+      <li>
+        Client side Validation, making sure everything is filled out and in
+        correct format.
+      </li>
+      <li>
+        Client-side validation is an initial check and an important feature of
+        good user experience; by catching invalid data on the client-side, the
+        user can fix it straight away.
+      </li>
+      <li>
+        client-side validation should not be considered an exhaustive security
+        measure! Your apps should always perform security checks on any
+        form-submitted data on the server-side as well as the client-side,
+      </li>
+    </ul>
+    <ul>
+      Form Validation?
+      <li>
+        When you enter data, the browser and/or the web server will check to see
+        that the data is in the correct format and within the constraints set by
+        the application
+      </li>
+      <li>
+        Validation done in the browser is called client-side validation, while
+        validation done on the server is called server-side validation.
+      </li>
+      <li>Three reason to making validating easy</li>
+      <li>We want to get the right data, in the right format.</li>
+      <li>We want to protect our users' data.</li>
+      <li>We want to protect ourselves.</li>
+      <li>
+        Never trust data passed to your server from the client. Even if your
+        form is validating correctly and preventing malformed input on the
+        client-side, a malicious user can still alter the network request.
+      </li>
+    </ul>
+    <ul>
+      Different Types of client-side validation
+      <li>
+        Built-in form validation uses HTML5 form validation features, which
+        we've discussed in many places throughout this module.
+      </li>
+      <li>
+        JavaScript validation is coded using JavaScript. This validation is
+        completely customizable, but you need to create it all (or use a
+        library).
+      </li>
+    </ul>
+    <ul>
+      Using built-in form validation
+      <li>
+        One of the most significant features of HTML5 form controls is the
+        ability to validate most user data without relying on JavaScript.
+      </li>
+      <li>
+        required: Specifies whether a form field needs to be filled in before
+        the form can be submitted.
+      </li>
+      <li>
+        minlength and maxlength: Specifies the minimum and maximum length of
+        textual data (strings)
+      </li>
+      <li>
+        min and max: Specifies the minimum and maximum values of numerical input
+        types
+      </li>
+      <li>
+        type: Specifies whether the data needs to be a number, an email address,
+        or some other specific preset type.
+      </li>
+      <li>
+        pattern: Specifies a regular expression that defines a pattern the
+        entered data needs to follow.
+      </li>
+      <li>
+        Note: There are several errors that will prevent the form from being
+        submitted, including a badInput, patternMismatch, rangeOverflow or
+        rangeUnderflow, stepMismatch, tooLong or tooShort, typeMismatch,
+        valueMissing, or a customError.
+      </li>
+    </ul>
+    <h2>Example Form Validation</h2>
+    <!-- <form>
+      <label for="choose">Would you prefer a banana or cherry?</label>
+      <input id="choose" name="i_like" />
+      <button>Submit</button>
+    </form> -->
+    <form>
+      <div>
+        <label for="choose">Would you prefer a banana or a cherry?</label>
+        <input
+          type="text"
+          id="choose"
+          name="i_like"
+          required
+          minlength="6"
+          maxlength="6"
+        />
+      </div>
+      <div>
+        <label for="number">How many would you like?</label>
+        <input
+          type="number"
+          id="number"
+          name="amount"
+          value="1"
+          min="1"
+          max="10"
+        />
+      </div>
+      <div>
+        <button>Submit</button>
+      </div>
+    </form>
+
+    <h1>Using Fetch</h1>
+    <p>
+      The Fetch API provides a JavaScript interface for accessing and
+      manipulating parts of the HTTP pipeline, such as requests and responses.
+    </p>
+    <p>
+      Fetch provides a better alternative that can be easily used by other
+      technologies such as Service Workers. Fetch also provides a single logical
+      place to define other HTTP-related concepts such as CORS and extensions to
+      HTTP.
+    </p>
+
+    <h1>Quakes Near Me</h1>
+    <h2>Quake List</h2>
+    <ul id="quakeList"></ul>
+  </body>
+</html>
