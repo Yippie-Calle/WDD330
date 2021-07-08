@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <table class="table is-narrow is-hoverable" id="leaderboard">
+      <thead>
+        <tr>
+          <th class="rank">
+            <abbr title="Position">Rank</abbr>
+          </th>
+          <th class="name">Name</th>
+          <th class="Symbol">Symbol</th>
+          <th class="price">Price(USD)</th>
+          <th class="market_cap">Market Cap</th>
+          <th class="circulating_supply">Circulating Supply</th>
+          <th class="volume_24h">Volume(24hr)</th>
+          <th class="percentage_change_24h">24%</th>
+        </tr>
+      </thead>
+      <tbody id="cryptocurrencies"></tbody>
+    </table>
+    <script
+      src="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd"
+      type="text/javascript"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
