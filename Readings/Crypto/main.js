@@ -68,15 +68,15 @@ function getNewData() {
 
   for (var i = 0; i < cryptocurrencies.length; i++) {
     var cryptocurrency = cryptocurrencies[i];
-    cryptocurrency.percentage_change_24 += getRandomScoreIncrease();
-    // cryptocurrency.percentage_change_24 += fetchNewData(
-    //   newData,
-    //   "market_cap_change_percentage_24h",
-    //   cryptocurrency.name
-    // );
-    // cryptocurrency.$item
-    //   .find(".percentage_change_24h")
-    //   .text(cryptocurrency.percentage_change_24);
+    // cryptocurrency.percentage_change_24 += getRandomScoreIncrease();
+    cryptocurrency.percentage_change_24 += fetchNewData(
+      newData,
+      "market_cap_change_percentage_24h",
+      cryptocurrency.name
+    );
+    cryptocurrency.$item
+      .find(".percentage_change_24h")
+      .text(cryptocurrency.percentage_change_24);
   }
   cryptocurrencies.sort(descending);
   updateRank(cryptocurrencies);

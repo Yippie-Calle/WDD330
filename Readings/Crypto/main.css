@@ -14,25 +14,41 @@
 }
 .rank {
   width: 60px;
+  /* width: 1%;
+  white-space: nowrap; */
 }
 .name {
   width: 150px;
+  /* width: 1%;
+  white-space: nowrap; */
 }
 .symbol {
   width: 80px;
+  /* width: 1%;
+  white-space: nowrap; */
 }
 .price {
   width: 100px;
+  /* width: 1%;
+  white-space: nowrap; */
 }
 .market_cap {
   width: 150px;
+  /* width: 1%;
+  white-space: nowrap; */
 }
 .circulating_supply {
   width: 170px;
+  /* width: 1%;
+  white-space: nowrap; */
 }
 .volume_24hr {
   width: 140px;
+  /* width: 1%;
+  white-space: nowrap; */
 }
 .percentage_change_24hr {
   width: 160px;
+  /* width: 1%;
+  white-space: nowrap; */
 }
