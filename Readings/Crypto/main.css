@@ -1,10 +1,10 @@
 .table {
   background-color: yellow;
 }
-#leaderboard #cryptocurrencies tr {
+#leaderboard #cryptocurrencies thead tr {
   display: block;
   clear: both;
-  position: absolute;
+  position: relative;
   -moz-transition-duration: 1s;
   -webkit-transition-duration: 1s;
   -ms-transition-duration: 1s;
