@@ -9,10 +9,35 @@ xhReq.send(null);
 var data = JSON.parse(xhReq.responseText);
 console.log(data[0]);
 
-//initializtion
+//initializtion for crypto table
 var cryptocurrencies;
 var timerId;
-var updateInterval = 2000;
+var updateInterval = 5000;
+//initiaztion for crypto
+let crypto = [];
+const searchbar = document.getElementById("searchBar");
+
+/*
+ * This area is for the search functionality
+ */
+
+console.log(searchbar);
+searchbar.addEventListener("keyup", (e) => {
+  console.log(e.target.value);
+});
+
+function getCryptoData() {
+  var xhReq = new XMLHttpRequest();
+  xhReq.open(
+    "GET",
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd",
+    false
+  );
+}
+
+/*********************
+ * This area is for the top 10 list
+ *********************/
 
 function descending(a, b) {
   return a.percentage_change_24 < b.percentage_change_24 ? 1 : -1;
@@ -64,7 +89,7 @@ function getNewData() {
   );
   newReq.send(null);
   var newData = JSON.parse(newReq.responseText);
-  console.log(data[0]);
+  //console.log(data[0]);
 
   for (var i = 0; i < cryptocurrencies.length; i++) {
     var cryptocurrency = cryptocurrencies[i];
@@ -81,7 +106,7 @@ function getNewData() {
   cryptocurrencies.sort(descending);
   updateRank(cryptocurrencies);
   reposition();
-  console.log("I am refreshing");
+  //console.log("I am refreshing");
 }
 
 //This will continously update our list.

@@ -11,6 +11,8 @@
 </head>
 
 <body>
+  <!-- This is a simple navagation to take you place to place -->
+
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="#">
@@ -72,37 +74,116 @@
 
       </div>
   </nav>
+  <!-- This is our header -->
   <section class="hero is-small is-link">
     <div class="hero-body">
       <p class="title">
         Crypto Search
       </p>
       <p class="subtitle">
-        Basic crypto search 
+        Basic crypto search engine
       </p>
     </div>
   </section>
-  <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="leaderboard">
-    <thead>
-      <tr>
-        <th class="rank">
-          <abbr title="Position">Rank</abbr>
-        </th>
-        <th class="name">Name</th>
-        <th class="Symbol">Symbol</th>
-        <th class="price">Price(USD)</th>
-        <th class="market_cap">Market Cap</th>
-        <th class="circulating_supply">Circulating Supply</th>
-        <th class="volume_24h">Volume(24hr)</th>
-        <th class="percentage_change_24h">24%</th>
-      </tr>
-    </thead> 
-    <tbody id="cryptocurrencies"></tbody>
-  </table>
+  <!-- Here we are explaining out page -->
+  <div class="content is-small">
+    <h1>Hello and Welcome</h1>
+    <p>This is my project demonstrating my what I learned in my Wed Front end development class. I hope this course
+      demonstrates the following:
+    </p>
+    <ol>
+      <li>My ability to create a functioning website</li>
+      <li>The ability to use API's </li>
+      <li>Javascript</li>
+      <li>Something</li>
+    </ol>
+    <h2>Why Crypto?</h2>
+    <p>This year I gained an intrest in crypto currencies. A revolutionary technology that will revolutionize the way we
+      look at money.
+      This crypto is what paper was to gold. The next line of the evolution of Crypto. Now I don't know much and I am
+      not a financial
+      advisor, so I won't try to teach you what that is here. You will see that I have a search bar. Search for a crypto
+      you know of
+      and press search. I hope that you will be able to look up a crypto and see some basic information about that
+      currency. At the bottom of the page you will see
+      a top 10 list that automatically updates to give you up to date information of what the current top ten cryptos
+      while you are on the page.
+      Hopefully this is good.
+      <strong>What are you waiting for? start searching and enjoy my page! </strong>
+    </p>
+
+  </div>
+  <!-- This area we search for crypto -->
+
+  <div class="field has-addons">
+    <div class="control" id="searchBar">
+      <input class="input" type="text" placeholder="Cryptocurrency">
+    </div>
+    <div class="control">
+      <a class="button is-info">
+        Search
+      </a>
+    </div>
+  </div>
+
+  <!-- here we display the searched crypto  -->
+  <div class="card" id="cryptoCard">
+    <!-- <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+        <a href="#">#css</a> <a href="#">#responsive</a>
+        <br>
+        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+      </div>
+    </div>
+    <div class="card">
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Add to List</a>
+      </footer>
+    </div> -->
+  </div>
+
+
+  <!-- This area we are displaying the top 10 cryptos -->
+  <div class="box">
+    <h1 class="title">Top 10 Cryptocurrencies</h1>
+    <h2 class="subtitle">Here are the top ten cryptocurrencies</h2>
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="leaderboard">
+      <thead>
+        <tr>
+          <th class="rank">
+            <abbr title="Position">Rank</abbr>
+          </th>
+          <th class="name">Name</th>
+          <th class="Symbol">Symbol</th>
+          <th class="price">Price(USD)</th>
+          <th class="market_cap">Market Cap</th>
+          <th class="circulating_supply">Circulating Supply</th>
+          <th class="volume_24h">Volume(24hr)</th>
+          <th class="percentage_change_24h">24%</th>
+        </tr>
+      </thead>
+      <tbody id="cryptocurrencies"></tbody>
+    </table>
+  </div>
+
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>Crypto</strong> by <a href="https://www.linkedin.com/in/bryan-calle">Bryan Calle</a>. 
+        <strong>Crypto</strong> by <a href="https://www.linkedin.com/in/bryan-calle">Bryan Calle</a>.
         <a href="http://opensource.org/licenses/mit-license.php">BYU-I</a>. Find my WDD330 portfolio
         <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">here</a>.
       </p>
