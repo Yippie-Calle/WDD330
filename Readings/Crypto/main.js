@@ -1,4 +1,7 @@
+//import CoinGecko from "coingecko-api";
+// const CoinGecko = require("coingecko-api");
 //fetch the Crypto data and store it as data
+
 var xhReq = new XMLHttpRequest();
 xhReq.open(
   "GET",
@@ -22,18 +25,10 @@ const searchbar = document.getElementById("searchBar");
  */
 
 console.log(searchbar);
-searchbar.addEventListener("keyup", (e) => {
+const filteredSearch = searchbar.addEventListener("keyup", (e) => {
   console.log(e.target.value);
 });
 
-function getCryptoData() {
-  var xhReq = new XMLHttpRequest();
-  xhReq.open(
-    "GET",
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd",
-    false
-  );
-}
 
 /*********************
  * This area is for the top 10 list
@@ -71,6 +66,7 @@ function getRandomScoreIncrease() {
 function getRandomBetween(min, max) {
   return Math.floor(Math.random() * max) + min;
 }
+
 function fetchNewData(data, attributeName, name) {
   for (var x in data) {
     if ((data[x].name == name) == true) {
@@ -79,6 +75,7 @@ function fetchNewData(data, attributeName, name) {
   }
   return null;
 }
+
 function getNewData() {
   //get the new data for each coin and change to the new value'
   var newReq = new XMLHttpRequest();
@@ -133,30 +130,30 @@ function resetBoard() {
   for (var i = 0; i < cryptocurrencies.length; i++) {
     var $item = $(
       "<tr class='cryptocurrency'>" +
-        "<th class='rank'>" +
-        (i + 1) +
-        "</th>" +
-        "<td class='name'>" +
-        cryptocurrencies[i].name +
-        "</td>" +
-        "<td class='symbol'>" +
-        cryptocurrencies[i].symbol +
-        "</td>" +
-        "<td class='price'>" +
-        cryptocurrencies[i].price +
-        "</td>" +
-        "<td class='market_cap'>" +
-        cryptocurrencies[i].market_cap +
-        "</td>" +
-        "<td class='circulating_supply'>" +
-        cryptocurrencies[i].circulating_supply +
-        "</td>" +
-        "<td class='volume_24hr'>" +
-        cryptocurrencies[i].volume_24h +
-        "</td>" +
-        "<td class='circulating_supply'>" +
-        cryptocurrencies[i].percentage_change_24 +
-        "</tr>"
+      "<th class='rank'>" +
+      (i + 1) +
+      "</th>" +
+      "<td class='name'>" +
+      cryptocurrencies[i].name +
+      "</td>" +
+      "<td class='symbol'>" +
+      cryptocurrencies[i].symbol +
+      "</td>" +
+      "<td class='price'>" +
+      cryptocurrencies[i].price +
+      "</td>" +
+      "<td class='market_cap'>" +
+      cryptocurrencies[i].market_cap +
+      "</td>" +
+      "<td class='circulating_supply'>" +
+      cryptocurrencies[i].circulating_supply +
+      "</td>" +
+      "<td class='volume_24hr'>" +
+      cryptocurrencies[i].volume_24h +
+      "</td>" +
+      "<td class='circulating_supply'>" +
+      cryptocurrencies[i].percentage_change_24 +
+      "</tr>"
     );
     cryptocurrencies[i].$item = $item;
     $list.append($item);
