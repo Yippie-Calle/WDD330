@@ -37,58 +37,38 @@ function getCryptoData() {
   cryptoReq.send(null);
   cryptoCoins = JSON.parse(cryptoReq.responseText);
   displayCoin = displayCrypto(cryptoCoins);
-  console.log(cryptoCoins);
-  //var container = document.getElementById('cryptoCard').innerHTML = displayCoin;
-  return cryptoCoins;
+
+  return displayCoin;
 }
 
 function displayCrypto(cryptoCoin) {
 
-  var crypto = [];
-  crypto.push({
-    name: cryptoCoin.name
-  });
-  crypto.push({
-    symbol: cryptoCoin.symbol
-  });
-  crypto.push({
-    image: cryptoCoin.image.thumb
-  });
-  crypto.push({
-    description: cryptoCoin.description.en
-  });
-  crypto.push({
-    current_price: cryptoCoin.market_data.current_price.usd
-  });
-  crypto.push({
-    link: cryptoCoin.links.homepage
-  });
-  for (let i = 0; i< crypto.length; i++){
     var card = (
     '<div class="card-content"> <div class="media"> <div class="media-left"> <figure class="image is-48x48"><img src="' +
-    crypto[i].image +
+    cryptoCoin.image.thumb +
     '" alt="' +
-    crypto[i].name +
-    'image"> </figure> </div> <div class="media-content"><p class="title is-4">' +
-    crypto[i].name +
+    cryptoCoin.name +
+    ' image"> </figure> </div> <div class="media-content"><p class="title is-4">' +
+    cryptoCoin.name +
     '</p> <p class="subtitle is-6">' +
-    crypto[i].symbol +
+    cryptoCoin.symbol +
     '</p></div></div><div class="content">' +
-    crypto[i].description +
-    '<p>Current Price: $' +
-    crypto[i].current_price +
-    '</p><a href="' +
-    crypto[i].link +
+    cryptoCoin.description.en +
+    '<p><strong>Current Price: $' +
+    cryptoCoin.market_data.current_price.usd +
+    '<strong></p><a href="' +
+    cryptoCoin.links.homepage +
     '">Homepage</a> </div> </div>' +
     '<div class="card">' +
     '<footer class="card-footer">' +
     '<a href="#" class="card-footer-item">Add to List</a>' +
     '</footer>' +
-    '</div>'
-  );
-  }
+    '</div>');
+    var container = document.getElementById("cryptoCard");
+    container.innerHTML = card;
   
-  return card;
+  
+  return container;
 }
 
 /*********************
