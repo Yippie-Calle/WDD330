@@ -32,56 +32,63 @@ var updateInterval = 5000;
 function getCryptoData() {
   var cryptoReq = new XMLHttpRequest();
   const searchbar = document.getElementById("searchCrypto").value;
-  console.log(searchbar);
-  const websiteApi = "https://api.coingecko.com/api/v3/coins/" + searchbar + "";
+  const websiteApi = "https://api.coingecko.com/api/v3/coins/" + searchbar;
   cryptoReq.open("GET", websiteApi, false);
   cryptoReq.send(null);
   cryptoCoins = JSON.parse(cryptoReq.responseText);
   displayCoin = displayCrypto(cryptoCoins);
-  console.log(displayCoin);
   console.log(cryptoCoins);
-  return displayCoin;
+  //var container = document.getElementById('cryptoCard').innerHTML = displayCoin;
+  return cryptoCoins;
 }
 
 function displayCrypto(cryptoCoin) {
+
   var crypto = [];
-  crypto.push({ name: cryptoCoin.name });
-  crypto.push({ symbol: cryptoCoin.symbol });
-  crypto.push({ image: cryptoCoin.image.thumb });
-  crypto.push({ description: cryptoCoin.description.en });
-  crypto.push({ current_price: cryptoCoin.market_data.current_price.usd });
-  crypto.push({ link: cryptoCoin.links.homepage });
-  var card =
+  crypto.push({
+    name: cryptoCoin.name
+  });
+  crypto.push({
+    symbol: cryptoCoin.symbol
+  });
+  crypto.push({
+    image: cryptoCoin.image.thumb
+  });
+  crypto.push({
+    description: cryptoCoin.description.en
+  });
+  crypto.push({
+    current_price: cryptoCoin.market_data.current_price.usd
+  });
+  crypto.push({
+    link: cryptoCoin.links.homepage
+  });
+  for (let i = 0; i< crypto.length; i++){
+    var card = (
     '<div class="card-content"> <div class="media"> <div class="media-left"> <figure class="image is-48x48"><img src="' +
-    crypto.image +
+    crypto[i].image +
     '" alt="' +
-    crypto.name +
+    crypto[i].name +
     'image"> </figure> </div> <div class="media-content"><p class="title is-4">' +
-    crypto.name +
+    crypto[i].name +
     '</p> <p class="subtitle is-6">' +
-    crypto.symbol +
-    "</p>" +
-    "</div>" +
-    "</div>" +
-    '<div class="content">' +
-    crypto.description +
-    "<p>Current Price: $" +
-    crypto.current_price +
-    "</p>" +
-    '<a href="' +
-    crypto.link +
-    '">Homepage</a>' +
-    "</div>" +
-    "</div>" +
+    crypto[i].symbol +
+    '</p></div></div><div class="content">' +
+    crypto[i].description +
+    '<p>Current Price: $' +
+    crypto[i].current_price +
+    '</p><a href="' +
+    crypto[i].link +
+    '">Homepage</a> </div> </div>' +
     '<div class="card">' +
     '<footer class="card-footer">' +
     '<a href="#" class="card-footer-item">Add to List</a>' +
-    "</footer>" +
-    "</div>";
-
-  var container = document.querySelector("card");
-  container.innerHTML = card;
-  return container;
+    '</footer>' +
+    '</div>'
+  );
+  }
+  
+  return card;
 }
 
 /*********************
@@ -184,30 +191,30 @@ function resetBoard() {
   for (var i = 0; i < cryptocurrencies.length; i++) {
     var $item = $(
       "<tr class='cryptocurrency'>" +
-        "<th class='rank'>" +
-        (i + 1) +
-        "</th>" +
-        "<td class='name'>" +
-        cryptocurrencies[i].name +
-        "</td>" +
-        "<td class='symbol'>" +
-        cryptocurrencies[i].symbol +
-        "</td>" +
-        "<td class='price'>" +
-        cryptocurrencies[i].price +
-        "</td>" +
-        "<td class='market_cap'>" +
-        cryptocurrencies[i].market_cap +
-        "</td>" +
-        "<td class='circulating_supply'>" +
-        cryptocurrencies[i].circulating_supply +
-        "</td>" +
-        "<td class='volume_24hr'>" +
-        cryptocurrencies[i].volume_24h +
-        "</td>" +
-        "<td class='circulating_supply'>" +
-        cryptocurrencies[i].percentage_change_24 +
-        "</tr>"
+      "<th class='rank'>" +
+      (i + 1) +
+      "</th>" +
+      "<td class='name'>" +
+      cryptocurrencies[i].name +
+      "</td>" +
+      "<td class='symbol'>" +
+      cryptocurrencies[i].symbol +
+      "</td>" +
+      "<td class='price'>" +
+      cryptocurrencies[i].price +
+      "</td>" +
+      "<td class='market_cap'>" +
+      cryptocurrencies[i].market_cap +
+      "</td>" +
+      "<td class='circulating_supply'>" +
+      cryptocurrencies[i].circulating_supply +
+      "</td>" +
+      "<td class='volume_24hr'>" +
+      cryptocurrencies[i].volume_24h +
+      "</td>" +
+      "<td class='circulating_supply'>" +
+      cryptocurrencies[i].percentage_change_24 +
+      "</tr>"
     );
     cryptocurrencies[i].$item = $item;
     $list.append($item);
