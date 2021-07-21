@@ -29,7 +29,6 @@ const filteredSearch = searchbar.addEventListener("keyup", (e) => {
   console.log(e.target.value);
 });
 
-
 /*********************
  * This area is for the top 10 list
  *********************/
@@ -130,30 +129,30 @@ function resetBoard() {
   for (var i = 0; i < cryptocurrencies.length; i++) {
     var $item = $(
       "<tr class='cryptocurrency'>" +
-      "<th class='rank'>" +
-      (i + 1) +
-      "</th>" +
-      "<td class='name'>" +
-      cryptocurrencies[i].name +
-      "</td>" +
-      "<td class='symbol'>" +
-      cryptocurrencies[i].symbol +
-      "</td>" +
-      "<td class='price'>" +
-      cryptocurrencies[i].price +
-      "</td>" +
-      "<td class='market_cap'>" +
-      cryptocurrencies[i].market_cap +
-      "</td>" +
-      "<td class='circulating_supply'>" +
-      cryptocurrencies[i].circulating_supply +
-      "</td>" +
-      "<td class='volume_24hr'>" +
-      cryptocurrencies[i].volume_24h +
-      "</td>" +
-      "<td class='circulating_supply'>" +
-      cryptocurrencies[i].percentage_change_24 +
-      "</tr>"
+        "<th class='rank'>" +
+        (i + 1) +
+        "</th>" +
+        "<td class='name'>" +
+        cryptocurrencies[i].name +
+        "</td>" +
+        "<td class='symbol'>" +
+        cryptocurrencies[i].symbol +
+        "</td>" +
+        "<td class='price'>" +
+        cryptocurrencies[i].price +
+        "</td>" +
+        "<td class='market_cap'>" +
+        cryptocurrencies[i].market_cap +
+        "</td>" +
+        "<td class='circulating_supply'>" +
+        cryptocurrencies[i].circulating_supply +
+        "</td>" +
+        "<td class='volume_24hr'>" +
+        cryptocurrencies[i].volume_24h +
+        "</td>" +
+        "<td class='circulating_supply'>" +
+        cryptocurrencies[i].percentage_change_24 +
+        "</tr>"
     );
     cryptocurrencies[i].$item = $item;
     $list.append($item);
