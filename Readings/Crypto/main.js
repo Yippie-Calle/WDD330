@@ -2,6 +2,8 @@
 // const CoinGecko = require("coingecko-api");
 //fetch the Crypto data and store it as data
 
+//const CoinGecko = require("coingecko-api");
+
 var xhReq = new XMLHttpRequest();
 xhReq.open(
   "GET",
@@ -10,32 +12,77 @@ xhReq.open(
 );
 xhReq.send(null);
 var data = JSON.parse(xhReq.responseText);
-console.log(data[0]);
+//console.log(data);
 
 //initializtion for crypto table
 var cryptocurrencies;
 var timerId;
 var updateInterval = 5000;
 //initiaztion for crypto
-let cryptoCoins = [];
 
-const searchbar = document.getElementById("searchBar");
 // searchbar.addEventListener("keyup", (e) => {
 //   const searchString = e.target.value.toLowerCase();
 //   const websiteApi = "https://api.coingecko.com/api/v3/coins/" + searchString;
 //   return websiteApi;
 // });
-//const websiteApi = "https://api.coingecko.com/api/v3/coins/" + searchbar;
+// const searchbar = document.getElementById("searchBar").value;
+// console.log(searchbar);
+// const websiteApi = "https://api.coingecko.com/api/v3/coins/" + searchbar;
 
-// function getCryptoData() {
-//   var cryptoReq = new XMLHttpRequest();
-//   cryptoReq.open("GET", websiteApi, false);
-//   cryptoReq.send(null);
-//   cryptoCoins = JSON.parse(xhReq.responseText);
-//   return console.log(cryptoCoins);
-// }
+function getCryptoData() {
+  var cryptoReq = new XMLHttpRequest();
+  const searchbar = document.getElementById("searchCrypto").value;
+  console.log(searchbar);
+  const websiteApi = "https://api.coingecko.com/api/v3/coins/" + searchbar + "";
+  cryptoReq.open("GET", websiteApi, false);
+  cryptoReq.send(null);
+  cryptoCoins = JSON.parse(cryptoReq.responseText);
+  displayCoin = displayCrypto(cryptoCoins);
+  console.log(displayCoin);
+  console.log(cryptoCoins);
+  return displayCoin;
+}
 
-//function display
+function displayCrypto(cryptoCoin) {
+  var crypto = [];
+  crypto.push({ name: cryptoCoin.name });
+  crypto.push({ symbol: cryptoCoin.symbol });
+  crypto.push({ image: cryptoCoin.image.thumb });
+  crypto.push({ description: cryptoCoin.description.en });
+  crypto.push({ current_price: cryptoCoin.market_data.current_price.usd });
+  crypto.push({ link: cryptoCoin.links.homepage });
+  var card =
+    '<div class="card-content"> <div class="media"> <div class="media-left"> <figure class="image is-48x48"><img src="' +
+    crypto.image +
+    '" alt="' +
+    crypto.name +
+    'image"> </figure> </div> <div class="media-content"><p class="title is-4">' +
+    crypto.name +
+    '</p> <p class="subtitle is-6">' +
+    crypto.symbol +
+    "</p>" +
+    "</div>" +
+    "</div>" +
+    '<div class="content">' +
+    crypto.description +
+    "<p>Current Price: $" +
+    crypto.current_price +
+    "</p>" +
+    '<a href="' +
+    crypto.link +
+    '">Homepage</a>' +
+    "</div>" +
+    "</div>" +
+    '<div class="card">' +
+    '<footer class="card-footer">' +
+    '<a href="#" class="card-footer-item">Add to List</a>' +
+    "</footer>" +
+    "</div>";
+
+  var container = document.querySelector("card");
+  container.innerHTML = card;
+  return container;
+}
 
 /*********************
  * This area is for the top 10 list
