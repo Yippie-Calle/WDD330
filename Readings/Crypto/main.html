@@ -120,7 +120,7 @@
       <input class="input" type="text" placeholder="Cryptocurrency">
     </div>
     <div class="control">
-      <a class="button is-info">
+      <a class="button is-info" onclick="getCryptoData()">
         Search
       </a>
     </div>
@@ -160,7 +160,7 @@
   <!-- This area we are displaying the top 10 cryptos -->
   <div class="box">
     <h1 class="title">Top 10 Cryptocurrencies</h1>
-    <h2 class="subtitle">Here are the top ten cryptocurrencies</h2>
+    <h2 class="subtitle">By percenteage change in last 24 hrs.</h2>
     <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="leaderboard">
       <thead>
         <tr>

@@ -17,17 +17,25 @@ var cryptocurrencies;
 var timerId;
 var updateInterval = 5000;
 //initiaztion for crypto
-let crypto = [];
+let cryptoCoins = [];
+
 const searchbar = document.getElementById("searchBar");
+// searchbar.addEventListener("keyup", (e) => {
+//   const searchString = e.target.value.toLowerCase();
+//   const websiteApi = "https://api.coingecko.com/api/v3/coins/" + searchString;
+//   return websiteApi;
+// });
+//const websiteApi = "https://api.coingecko.com/api/v3/coins/" + searchbar;
 
-/*
- * This area is for the search functionality
- */
+// function getCryptoData() {
+//   var cryptoReq = new XMLHttpRequest();
+//   cryptoReq.open("GET", websiteApi, false);
+//   cryptoReq.send(null);
+//   cryptoCoins = JSON.parse(xhReq.responseText);
+//   return console.log(cryptoCoins);
+// }
 
-console.log(searchbar);
-const filteredSearch = searchbar.addEventListener("keyup", (e) => {
-  console.log(e.target.value);
-});
+//function display
 
 /*********************
  * This area is for the top 10 list

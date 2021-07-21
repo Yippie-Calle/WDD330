@@ -39,6 +39,10 @@ const links = [
     label: "Week10 Notes",
     url: "Readings/week10.html",
   },
+  {
+    label: "Final Project",
+    url: "Readings/Crypto/main.html",
+  },
 ];
 
 function addToIndex() {
