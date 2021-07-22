@@ -18,8 +18,8 @@ var data = JSON.parse(xhReq.responseText);
 var cryptocurrencies;
 var timerId;
 var updateInterval = 5000;
-//initiaztion for crypto
-
+//initiaztion for crypto Storage
+var watchList = [];
 // searchbar.addEventListener("keyup", (e) => {
 //   const searchString = e.target.value.toLowerCase();
 //   const websiteApi = "https://api.coingecko.com/api/v3/coins/" + searchString;
@@ -36,14 +36,26 @@ function getCryptoData() {
   cryptoReq.open("GET", websiteApi, false);
   cryptoReq.send(null);
   cryptoCoins = JSON.parse(cryptoReq.responseText);
-  displayCoin = displayCrypto(cryptoCoins);
+  // displayCoin = displayCrypto(cryptoCoins);
+  // storeWatchList(cryptoCoins);
+  return cryptoCoins;
+}
+function storeWatchList() {
+  var cryptoCoin = getCryptoData();
 
-  return displayCoin;
+  watchList.push({
+    name: cryptoCoin.name,
+    //image: cryptoCoin.cryptoCoin.image.thumb,
+    symbol: cryptoCoin.symbol,
+  });
+  let watchList_Sterilized = JSON.stringify(watchList);
+  localStorage.setItem("watchList", watchList_Sterilized);
+  console.log(watchList_Sterilized);
 }
 
-function displayCrypto(cryptoCoin) {
-
-    var card = (
+function displayCrypto() {
+  var cryptoCoin = getCryptoData();
+  var card =
     '<div class="card-content"> <div class="media"> <div class="media-left"> <figure class="image is-48x48"><img src="' +
     cryptoCoin.image.thumb +
     '" alt="' +
@@ -54,20 +66,19 @@ function displayCrypto(cryptoCoin) {
     cryptoCoin.symbol +
     '</p></div></div><div class="content">' +
     cryptoCoin.description.en +
-    '<p><strong>Current Price: $' +
+    "<p><strong>Current Price: $" +
     cryptoCoin.market_data.current_price.usd +
     '<strong></p><a href="' +
     cryptoCoin.links.homepage +
     '">Homepage</a> </div> </div>' +
     '<div class="card">' +
-    '<footer class="card-footer">' +
-    '<a href="#" class="card-footer-item">Add to List</a>' +
-    '</footer>' +
-    '</div>');
-    var container = document.getElementById("cryptoCard");
-    container.innerHTML = card;
-  
-  
+    '<footer class="card-footer" onclick="storeWatchList()">' +
+    "<p>Add to List</p>" +
+    "</footer>" +
+    "</div>";
+  var container = document.getElementById("cryptoCard");
+  container.innerHTML = card;
+
   return container;
 }
 
@@ -171,30 +182,30 @@ function resetBoard() {
   for (var i = 0; i < cryptocurrencies.length; i++) {
     var $item = $(
       "<tr class='cryptocurrency'>" +
-      "<th class='rank'>" +
-      (i + 1) +
-      "</th>" +
-      "<td class='name'>" +
-      cryptocurrencies[i].name +
-      "</td>" +
-      "<td class='symbol'>" +
-      cryptocurrencies[i].symbol +
-      "</td>" +
-      "<td class='price'>" +
-      cryptocurrencies[i].price +
-      "</td>" +
-      "<td class='market_cap'>" +
-      cryptocurrencies[i].market_cap +
-      "</td>" +
-      "<td class='circulating_supply'>" +
-      cryptocurrencies[i].circulating_supply +
-      "</td>" +
-      "<td class='volume_24hr'>" +
-      cryptocurrencies[i].volume_24h +
-      "</td>" +
-      "<td class='circulating_supply'>" +
-      cryptocurrencies[i].percentage_change_24 +
-      "</tr>"
+        "<th class='rank'>" +
+        (i + 1) +
+        "</th>" +
+        "<td class='name'>" +
+        cryptocurrencies[i].name +
+        "</td>" +
+        "<td class='symbol'>" +
+        cryptocurrencies[i].symbol +
+        "</td>" +
+        "<td class='price'>" +
+        cryptocurrencies[i].price +
+        "</td>" +
+        "<td class='market_cap'>" +
+        cryptocurrencies[i].market_cap +
+        "</td>" +
+        "<td class='circulating_supply'>" +
+        cryptocurrencies[i].circulating_supply +
+        "</td>" +
+        "<td class='volume_24hr'>" +
+        cryptocurrencies[i].volume_24h +
+        "</td>" +
+        "<td class='circulating_supply'>" +
+        cryptocurrencies[i].percentage_change_24 +
+        "</tr>"
     );
     cryptocurrencies[i].$item = $item;
     $list.append($item);
