@@ -52,3 +52,9 @@
   /* width: 1%;
   white-space: nowrap; */
 }
+.card-footer {
+  cursor: pointer;
+}
+.card-footer:hover {
+  color: aqua;
+}
